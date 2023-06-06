@@ -1,0 +1,10 @@
+int maximumProfit(vector<int> &p){
+    int n = p.size();
+    int buy = INT_MAX;
+    int maxProfit = 0;
+    for(int i =0;i<n;i++){
+        buy = min(buy,p[i]);
+        maxProfit = max(maxProfit,p[i]-buy);
+    }
+    return maxProfit;
+}

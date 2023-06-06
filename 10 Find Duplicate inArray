@@ -1,0 +1,11 @@
+int findDuplicate(vector<int> &nums, int n){
+	sort(nums.begin(), nums.end());
+        int result=-1;
+        
+        for(int i=1;i<n;i++){
+            if(nums[i]==nums[i-1]){
+                result=nums[i];
+            }
+        }
+        return result;
+}

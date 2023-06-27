@@ -1,0 +1,24 @@
+#Iterative
+ListNode* reverseList(ListNode* head) {
+      ListNode * curr = head;
+      ListNode * prev = NULL;
+      ListNode * temp = NULL;
+      while(curr!=NULL){
+          temp = curr->next;
+          curr->next = prev;
+          prev=curr;
+          curr= temp;
+      }
+      return prev;
+  }
+
+#Recursive
+ListNode* f(ListNode*head , ListNode*prev){
+        if(!head) return prev;
+        ListNode* next = head->next;
+        head->next = prev;
+        return f(next , head);
+    }
+    ListNode* reverseList(ListNode* head) {
+        return f(head,NULL);
+    }
